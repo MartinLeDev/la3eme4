@@ -1,0 +1,105 @@
+:root {
+    /* Palette Light */
+    --color-1-light: #f0fdfa;
+    --color-2-light: #ccfbf1;
+    --color-3-light: #99f6e4;
+    --color-4-light: #5eead4;
+    --color-5-light: #2dd4bf;
+    --color-6-light: #14b8a6;
+    --color-7-light: #0d9488;
+    --color-8-light: #0f766e;
+    --color-9-light: #115e59;
+    --color-10-light: #134e4a;
+    --color-11-light: #164e4a;
+    --color-12-light: #092926;
+
+    /* Palette Dark */
+    --color-1-dark: #002924;
+    --color-2-dark: #004034;
+    --color-3-dark: #006551;
+    --color-4-dark: #007f63;
+    --color-5-dark: #009176;
+    --color-6-dark: #00a88a;
+    --color-7-dark: #00c1a1;
+    --color-8-dark: #14d5b5;
+    --color-9-dark: #5ce8d0;
+    --color-10-dark: #9cf2e4;
+    --color-11-dark: #ccfbf1;
+    --color-12-dark: #eafffa;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: clamp(1.4, calc(1.2 + 0.5vw), 1.8);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-1-light); /* Couleur de fond */
+    color: var(--color-11-light); /* Couleur du texte */
+}
+
+header {
+    background: var(--color-3-light); /* Couleur du header */
+    color: var(--color-12-light); /* Couleur du texte dans le header */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h2 {
+    line-height: minmax(16px,10%);
+    font-size: 1.2em;
+    margin: 5px 0 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+    background: var(--color-1-light); /* Fond principal */
+    color: var(--color-12-light); /* Texte principal */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+main::after, main::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: #555555;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 500;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+section h3 {
+    border-bottom: 2px solid var(--color-9); /* Couleur des bordures */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    background: var(--color-3-light);
+    color: var(--color-12-light);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.5;
+    border-radius: 10px;
+    border-top: 2px solid var(--color-6-light);
+}
