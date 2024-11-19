@@ -31,10 +31,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: clamp(1.4, calc(1.2 + 0.5vw), 1.8);
+    line-height: clamp(1.4, calc(1.2 + 0.5vw), 2.8);
     margin: 0;
     padding: 0;
-    background-color: var(--color-1-light); /* Couleur de fond */
+    background: var(--color-1-light); /* Couleur de fond */
     color: var(--color-11-light); /* Couleur du texte */
 }
 
@@ -56,33 +56,55 @@ header h2 {
 }
 
 main {
+    position: relative;
     padding: 20px;
-    max-width: 90%;
+    max-width: 80%;
     margin: auto;
-    background: var(--color-1-light); /* Fond principal */
-    color: var(--color-12-light); /* Texte principal */
+    background: var(--color-2-light); /* Fond principal */
+    color: var(--color-11-light); /* Texte principal */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 40px;
     margin-bottom: 100px;
 }
 
-main::after, main::before{
+main::after, main::before {
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: #555555;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    z-index: 500;
-    padding: 3px;
+    z-index: -100;
+    padding: 5px;
     border-radius: 10px;
+    background: conic-gradient(from var(--angle),var(--color-6-dark), var(--color-7-dark), var(--color-8-dark), var(--color-9-dark), var(--color-10-dark), var(--color-11-dark), var(--color-12-dark), var(--color-6-dark));
+
+    animation: 3s spin linear infinite;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+@keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+}
+
+main::before{
+    filter: blur(5px);
 }
 
 section h3 {
-    border-bottom: 2px solid var(--color-9); /* Couleur des bordures */
+    border-bottom: 2px solid var(--color-9-light); /* Couleur des bordures */
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -94,6 +116,7 @@ section p {
 
 footer {
     text-align: center;
+    z-index: 1000;
     background: var(--color-3-light);
     color: var(--color-12-light);
     position: fixed;
