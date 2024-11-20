@@ -103,7 +103,14 @@ main::before{
     filter: blur(5px);
 }
 
-section h3 {
+section h4::before{
+    content: '» ';
+}
+section h4::after{
+    content: ' «';
+}
+
+main h3 {
     border-bottom: 2px solid var(--color-9-light); /* Couleur des bordures */
     padding-bottom: 5px;
     margin-bottom: 15px;
