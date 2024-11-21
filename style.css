@@ -16,8 +16,8 @@
     /* Palette Dark */
     --color-1-dark: #002924;
     --color-2-dark: #004034;
-    --color-3-dark: #006551;
     --color-4-dark: #007f63;
+    --color-3-dark: #006551;
     --color-5-dark: #009176;
     --color-6-dark: #00a88a;
     --color-7-dark: #00c1a1;
@@ -26,21 +26,50 @@
     --color-10-dark: #9cf2e4;
     --color-11-dark: #ccfbf1;
     --color-12-dark: #eafffa;
+
+    
+    /* Palette */
+    --color-1: var(--color-1-light);
+    --color-2: var(--color-2-light);
+    --color-3: var(--color-3-light);
+    --color-4: var(--color-4-light);
+    --color-5: var(--color-5-light);
+    --color-6: var(--color-6-light);
+    --color-7: var(--color-7-light);
+    --color-8: var(--color-8-light);
+    --color-9: var(--color-9-light);
+    --color-10: var(--color-10-light);
+    --color-11: var(--color-11-light);
+    --color-12: var(--color-12-light);
 }
 
+[data-theme="dark"] {
+    --color-1: var(--color-1-dark);
+    --color-2: var(--color-2-dark);
+    --color-3: var(--color-3-dark);
+    --color-4: var(--color-4-dark);
+    --color-5: var(--color-5-dark);
+    --color-6: var(--color-6-dark);
+    --color-7: var(--color-7-light);
+    --color-8: var(--color-8-light);
+    --color-9: var(--color-9-light);
+    --color-10: var(--color-10-light);
+    --color-11: var(--color-11-light);
+    --color-12: var(--color-12-light);
+}
 
 body {
     font-family: Arial, sans-serif;
     line-height: clamp(1.4, calc(1.2 + 0.5vw), 2.8);
     margin: 0;
     padding: 0;
-    background: var(--color-1-light); /* Couleur de fond */
-    color: var(--color-11-light); /* Couleur du texte */
+    background: var(--color-1); /* Couleur de fond */
+    color: var(--color-11); /* Couleur du texte */
 }
 
 header {
-    background: var(--color-3-light); /* Couleur du header */
-    color: var(--color-12-light); /* Couleur du texte dans le header */
+    background: var(--color-3); /* Couleur du header */
+    color: var(--color-12); /* Couleur du texte dans le header */
     padding: 20px 0;
     text-align: center;
 }
@@ -60,8 +89,8 @@ main {
     padding: 20px;
     max-width: 80%;
     margin: auto;
-    background: var(--color-2-light); /* Fond principal */
-    color: var(--color-11-light); /* Texte principal */
+    background: var(--color-5); /* Fond principal */
+    color: var(--color-11); /* Texte principal */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 40px;
@@ -79,7 +108,7 @@ main::after, main::before {
     z-index: -100;
     padding: 5px;
     border-radius: 10px;
-    background: conic-gradient(from var(--angle),var(--color-6-dark), var(--color-7-dark), var(--color-8-dark), var(--color-9-dark), var(--color-10-dark), var(--color-11-dark), var(--color-12-dark), var(--color-6-dark));
+    background: conic-gradient(from var(--angle),var(--color-6), var(--color-7), var(--color-8), var(--color-6));
 
     animation: 3s spin linear infinite;
 }
@@ -111,7 +140,7 @@ section h4::after{
 }
 
 main h3 {
-    border-bottom: 2px solid var(--color-9-light); /* Couleur des bordures */
+    border-bottom: 2px solid var(--color-9); /* Couleur des bordures */
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -124,12 +153,44 @@ section p {
 footer {
     text-align: center;
     z-index: 1000;
-    background: var(--color-3-light);
-    color: var(--color-12-light);
+    background: var(--color-3);
+    color: var(--color-12);
     position: fixed;
     bottom: 0;
     width: 100%;
     line-height: 1.5;
     border-radius: 10px;
-    border-top: 2px solid var(--color-6-light);
+    border-top: 2px solid var(--color-6);
+}
+
+#toggle-theme{
+    position: fixed;
+    cursor: pointer;
+    padding: 5px;
+    top: 10px;
+    right: 10px;
+    border: 0px;
+    border-radius: 100%;
+    transition: 0.5s;
+    background: var(--color-5);
+}
+
+#toggle-theme:hover{
+    background: var(--color-6);
+}
+
+#toggle-theme::after, #toggle-theme::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -100;
+    padding: 5px;
+    border-radius: 10px;
+    background: conic-gradient(from var(--angle),var(--color-6), var(--color-7), var(--color-8), var(--color-6));
+
+    animation: 3s spin linear infinite;
 }
