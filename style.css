@@ -172,7 +172,9 @@ footer {
     border: 0px;
     border-radius: 100%;
     transition: 0.5s;
-    background: var(--color-5);
+    background: var(--color-6);
+    z-index: 500;
+    
 }
 
 #toggle-theme:hover{
@@ -182,12 +184,12 @@ footer {
 #toggle-theme::after, #toggle-theme::before {
     content: '';
     position: absolute;
+    z-index: -5;
     height: 100%;
     width: 100%;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    z-index: -100;
     padding: 5px;
     border-radius: 10px;
     background: conic-gradient(from var(--angle),var(--color-6), var(--color-7), var(--color-8), var(--color-6));
